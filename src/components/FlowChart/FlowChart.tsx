@@ -109,6 +109,10 @@ export const FlowChart = (props: IFlowChartProps) => {
   const nodeCallbacks = { onDragNode, onNodeClick, onDragNodeStop, onNodeMouseEnter, onNodeMouseLeave, onNodeSizeChange,onNodeDoubleClick }
   const portCallbacks = { onPortPositionChange, onLinkStart, onLinkMove, onLinkComplete, onLinkCancel }
 
+  //dcm
+  console.log('node and link info')
+  console.log(chart)
+
   const nodesInView = Object.keys(nodes).filter((nodeId) => {
     const defaultNodeSize = { width: 500, height: 500 }
 
