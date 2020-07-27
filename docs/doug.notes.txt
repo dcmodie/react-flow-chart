@@ -1,0 +1,44 @@
+		"switch": {
+			"data": "isPrimaryIncome",
+			"cases": {
+				"true": {
+					"next": "special_life_decision_clip_shown_1"
+				},
+				"false": {
+					"next": "debt_no_debt_decision_2"
+				}
+			}
+		}
+
+
+		"clip": "life_isItRightForYou_financialSupport",
+		"next": "primary_wage_earner_calculation",
+		"playbarPercentage": 0.857142857
+
+
+		"form": "backNext",
+		"title": "Calculator",
+		"subtitle": "Determine how much coverage<br>is right for me.",
+		"playbarPercentage": 0.945,
+		"next": "LABEL_life_calculator"
+
+	"clip": "right4u_enroll_now2",
+		"title": "Enroll now? Or watch again?",
+		"menu": [{
+				"label": "Introduction",
+				"next": "LABEL_life_intro"
+			},
+			{
+				"label": "Learn about it.",
+				"next": "LABEL_life_what_is_it"
+			},
+			{
+				"label": "Why enroll?",
+				"next": "LABEL_life_why_need"
+			},
+			{
+				"label": "Help me decide.",
+				"next": "LABEL_life_calculator"
+			}
+		],
+		"playbarPercentage": 0.99

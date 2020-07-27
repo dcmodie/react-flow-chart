@@ -12,10 +12,22 @@ const Outer = styled.div`
   padding: 40px 30px;
 `
 
+const clipData = {
+	node1:{
+      dialog:"Hi, I'm Harvey, I'm here to tell you about Life insurance.",
+      nodeData:{
+          clip:"hi_harvey",
+          playbarPercentage:"0.1",
+          next:"let_me_tell_you"
+      }
+  }
+}
+
+
 export const NodeInnerDefault = ({ node,className }: INodeInnerDefaultProps) => {
   return (
     <Outer className={className}>
-      <div>Type: {node.type}</div>
+      <div>{  clipData[node.id] ? clipData[node.id].dialog: 'no dialog'}</div>
     </Outer>
   )
 }
