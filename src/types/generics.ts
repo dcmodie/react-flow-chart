@@ -12,9 +12,3 @@ export interface IOffset {
   offsetLeft: number
   offsetTop: number
 }
-/*
-export interface IDetails {
-  clip?: string
-  otherData?: boolean
-}
-*/
