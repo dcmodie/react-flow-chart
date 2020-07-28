@@ -1,5 +1,24 @@
 import { IChart } from '../../src'
 
+export const nodeInfo = {
+  ci_whatisit_preexisting_11:{
+    dialog:"You have a pre existing",
+    clip:"ci_whatisit_preexisting",
+    playbarPercentage:0.1
+  },
+  ci_2:{
+    dialog:"this is ci_2",
+    clip:"ci_2",
+    playbarPercentage:0.2
+  },
+  ci_3:{
+    dialog:"this is ci_3",
+    clip:"ci_3",
+    playbarPercentage:0.3
+  }
+}
+
+
 export const chartSimple: IChart = {
   offset: {
     x: 0,
@@ -7,8 +26,8 @@ export const chartSimple: IChart = {
   },
   scale: 1,
   nodes: {
-    node1: {
-      id: 'node1',
+    ci_whatisit_preexisting_11: {
+      id: 'ci_whatisit_preexisting_11',
       type: 'output-only',
       readonly:true,
       position: {
@@ -32,8 +51,8 @@ export const chartSimple: IChart = {
         },
       },
     },
-    node2: {
-      id: 'node2',
+    ci_2: {
+      id: 'ci_2',
       type: 'input-output',
       position: {
         x: 300,
@@ -50,8 +69,8 @@ export const chartSimple: IChart = {
         },
       },
     },
-    node3: {
-      id: 'node3',
+    ci_3: {
+      id: 'ci_3',
       type: 'input-output',
       position: {
         x: 100,
@@ -67,66 +86,9 @@ export const chartSimple: IChart = {
           type: 'output',
         },
       },
-    },
-    node4: {
-      id: 'node4',
-      type: 'input-output',
-      position: {
-        x: 500,
-        y: 600,
-      },
-      ports: {
-        port1: {
-          id: 'port1',
-          type: 'input',
-        },
-        port2: {
-          id: 'port2',
-          type: 'output',
-        },
-      },
-    },
+    }
   },
   links: {
-    link1: {
-      id: 'link1',
-      from: {
-        nodeId: 'node1',
-        portId: 'port2',
-      },
-      to: {
-        nodeId: 'node2',
-        portId: 'port1',
-      },
-      properties: {
-        label: 'example link label',
-      },
-    },
-    link2: {
-      id: 'link2',
-      from: {
-        nodeId: 'node2',
-        portId: 'port2',
-      },
-      to: {
-        nodeId: 'node3',
-        portId: 'port1',
-      },
-      properties: {
-        label: 'another example link label',
-      },
-    },
-    link3: {
-      id: 'link3',
-      from: {
-        nodeId: 'node2',
-        portId: 'port2',
-      },
-      to: {
-        nodeId: 'node4',
-        portId: 'port1',
-      },
-    },
   },
   selected: {},
   hovered: {},
