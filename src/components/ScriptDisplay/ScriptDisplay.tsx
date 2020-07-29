@@ -27,11 +27,11 @@ export const ScriptDisplay = (props: ScriptDisplayProps) => {
         scriptObject[originNode].next = destNode;
       }
     } )
-    return (<div><pre>{JSON.stringify(scriptObject, null, 2) }</pre></div>)
+    return (<div ><pre>{JSON.stringify(scriptObject, null, 2) }</pre></div>)
   }
 
   return (
-    <div>
+    <div  style={{overflowY:'scroll'}}>
 {
       /*
       <div>links:
@@ -48,7 +48,7 @@ export const ScriptDisplay = (props: ScriptDisplayProps) => {
       </div>
       */
 }
-      <div>
+      <div >
         {createScript()}
       </div>
     </div>
