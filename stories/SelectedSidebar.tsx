@@ -2,7 +2,7 @@
 import {  mapValues } from 'lodash'
 import * as React from 'react'
 import styled from 'styled-components'
-import { FlowChart, Temp } from '../src'
+import { FlowChart, ScriptDisplay } from '../src'
 import * as actions from '../src/container/actions'
 import { Content, Page, Sidebar } from './components'
 import {  nodeInfo } from './misc/exampleChartState'
@@ -220,7 +220,7 @@ export class SelectedSidebar extends React.Component {
             : <Message>Click on a Node, Port or Link</Message> 
             }
 
-            <Temp chart={chart}/>
+            <ScriptDisplay chart={chart}/>
           </Sidebar>
         </Page>
       </div>

@@ -18,11 +18,11 @@ export interface INodeDefaultProps {
 export const NodeDefault = styled.div<INodeDefaultProps>`
   position: absolute;
   transition: 0.3s ease box-shadow, 0.3s ease margin-top;
-  background: green;
+  background: white;
   border-radius: 4px;
   min-width: 200px;
   ${(props) => props.isSelected && css`
-    box-shadow: 0 50px 20px rgba(200,0,0,.99);
+    box-shadow: 0 20px 20px rgba(0,0,0,.1);
     margin-top: -2px;
     `
   }  

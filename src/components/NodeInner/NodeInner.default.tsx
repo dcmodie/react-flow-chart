@@ -14,8 +14,6 @@ const Outer = styled.div`
 `
 
 export const NodeInnerDefault = ({ node,className }: INodeInnerDefaultProps) => {
-  console.log('node')
-  console.log(node)
   return (
     <Outer className={className}>
       <div>{ dialogReference[node.id] ? dialogReference[node.id] : node.id}</div>
