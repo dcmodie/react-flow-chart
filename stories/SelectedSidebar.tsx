@@ -48,23 +48,9 @@ const createClipNode = (chart: IChart, nodeName: any, index: number) => {
       },
     }
     if (nodeInfo[nodeName].next){
-      let linkName = 'link_' + Math.floor(Math.random()*100000000);
       const fromNode = nodeName;
       const toNode = nodeInfo[nodeName].next;
-      console.log ('creating link')
-      console.log (linkName)
-      chart.links[linkName] = {
-        id:linkName,
-        from:{
-          nodeId:fromNode,
-          portId: "port2"
-        },
-        to:{
-          nodeId:toNode,
-          portId: "port1"
-        }
-      }
-
+      createLink(fromNode, toNode, "port2", chart);
     }
 }
 
@@ -83,7 +69,6 @@ const createLink = (fromNode: string, toNode: string, fromPortName: string, char
   }
 }
 
-
 const createMenuNode = (chart: IChart, nodeName: any, index: number) => {
     const menuArray = nodeInfo[nodeName].menu;
     const ports = {port1:{id:'port1', type:'input'}}
@@ -94,23 +79,6 @@ const createMenuNode = (chart: IChart, nodeName: any, index: number) => {
           const fromNode = nodeName;
           const toNode = menuItem.next;
           createLink(fromNode, toNode, portName, chart);
-          // let linkName = 'link_' + Math.floor(Math.random()*100000000);
-          // const fromNode = nodeName;
-          // const toNode = menuItem.next;
-          // console.log ('creating link in menu')
-          // console.log (linkName)
-          // chart.links[linkName] = {
-          //   id:linkName,
-          //   from:{
-          //     nodeId:fromNode,
-          //     portId: portName
-          //   },
-          //   to:{
-          //     nodeId:toNode,
-          //     portId: "port1"
-          //   }
-          // }
-
         }
 
     })
@@ -123,9 +91,6 @@ const createMenuNode = (chart: IChart, nodeName: any, index: number) => {
       ports: ports,
     }
 }
-
-
-
 
 const createChart = (nodeInfo: any)=>{
   const retVal: IChart = {    
@@ -141,8 +106,6 @@ const createChart = (nodeInfo: any)=>{
   }
 
   Object.keys(nodeInfo).map ( (node: any, index)=>{
-    console.log('has menu')
-    console.log(nodeInfo[node].hasOwnProperty("menu"))
     if (nodeInfo[node].hasOwnProperty("menu")){
       // need to create menu node
       createMenuNode(retVal, node, index);
