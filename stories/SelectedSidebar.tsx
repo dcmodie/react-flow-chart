@@ -74,56 +74,23 @@ const createClipNode = (chart: IChart, nodeName: any, index: number) => {
 
 const createMenuNode = (chart: IChart, nodeName: any, index: number) => {
 
-    //const menuArray = nodeInfo
+    const menuArray = nodeInfo[nodeName].menu;
 
+    const ports = {port1:{id:'port1', type:'input'}}
+    menuArray.map( (menuItem: any, index0: number)=>{
+        const portName = "port" + (index0 + 2).toString() ;
+        ports[portName] = {id:portName, type:'output'};
 
-
-
+    })
     chart.nodes[nodeName] = 
     {
       id:nodeName,
       type:'input-output',
       readonly:false,
       position:{x:300, y:130 * index},
-      ports:{ 
-        porta: {
-            id: 'porta',
-            type: 'input',
-          },
-        portb: {
-            id: 'portb',
-            type: 'output',
-          },
-          portc: {
-            id: 'portc',
-            type: 'output',
-          }
-      },
+      ports: ports,
     }
-    /*
-    if (nodeInfo[nodeName].next){
-      let linkName = 'link_' + Math.floor(Math.random()*100000000);
-      const fromNode = nodeName;
-      const toNode = nodeInfo[nodeName].next;
-      console.log ('creating link')
-      console.log (linkName)
-      chart.links[linkName] = {
-        id:linkName,
-        from:{
-          nodeId:fromNode,
-          portId: "port2"
-        },
-        to:{
-          nodeId:toNode,
-          portId: "port1"
-        }
-      }
-
-  //    console.log('link')
-  //    console.log(retVal.links)
-
-    }
-    */
+    
 }
 
 
