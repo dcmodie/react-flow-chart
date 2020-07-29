@@ -24,6 +24,29 @@ export const dialogReference = {
 }
 
 export const nodeInfo = {
+
+    "MENU_main_menu_display_1": {
+        "clip": "intro_nav_select_no_all",
+        "title": "Where would you like to go?",
+        "menu": [{
+            "label": "Introduction",
+            "next": "LABEL_CI_intro"
+        }, {
+            "label": "Learn about it.",
+            "next": "LABEL_CI_what_is_it"
+        }, {
+            "label": "Why enroll?",
+            "next": "LABEL_CI_why_need"
+        }, {
+            "label": "Review plan details.",
+            "next": "LABEL_CI_full_chart"
+        }, {
+            "label": "Help me decide.",
+            "next": "LABEL_CI_calculator"
+        }],
+        "playbarPercentage": 0.022727272727272728,
+        "next": "LABEL_CI_intro"
+    },
     "LABEL_CI_what_is_it": {
         "progressTitle": "Critical Illness Insurance: What Is It?",
         "playbarPercentage": 0.25000000000000006,
@@ -81,28 +104,19 @@ export const nodeInfo = {
         "next": "Critical_Illness_Insurance__What_Is_Covered__18"
     },
 
-    "MENU_main_menu_display_1": {
-        "clip": "intro_nav_select_no_all",
-        "title": "Where would you like to go?",
-        "menu": [{
-            "label": "Introduction",
-            "next": "LABEL_CI_intro"
-        }, {
-            "label": "Learn about it.",
-            "next": "LABEL_CI_what_is_it"
-        }, {
-            "label": "Why enroll?",
-            "next": "LABEL_CI_why_need"
-        }, {
-            "label": "Review plan details.",
-            "next": "LABEL_CI_full_chart"
-        }, {
-            "label": "Help me decide.",
-            "next": "LABEL_CI_calculator"
-        }],
-        "playbarPercentage": 0.022727272727272728,
-        "next": "LABEL_CI_intro"
+
+
+    "LABEL_CI_why_need": {
+        "progressTitle": "Critical Illness Insurance: Why Do I Need It?",
+        "playbarPercentage": 0.6136363636363634,
+        "next": "footnote_24"
+    },
+    "LABEL_CI_intro": {
+        "progressTitle": "Critical Illness Insurance: Introduction",
+        "playbarPercentage": 0.045454545454545456,
+        "next": "switch_basicSetup_form_played_2"
     }
+
   }
 /*
     link1: {

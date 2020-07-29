@@ -65,9 +65,6 @@ const createClipNode = (chart: IChart, nodeName: any, index: number) => {
         }
       }
 
-  //    console.log('link')
-  //    console.log(retVal.links)
-
     }
 }
 
