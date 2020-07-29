@@ -68,6 +68,21 @@ const createClipNode = (chart: IChart, nodeName: any, index: number) => {
     }
 }
 
+const createLink = (fromNode: string, toNode: string, fromPortName: string, chart: IChart)=>{
+  const linkName = 'link_' + Math.floor(Math.random()*100000000);
+  chart.links[linkName] = {
+    id:linkName,
+    from:{
+      nodeId:fromNode,
+      portId: fromPortName
+    },
+    to:{
+      nodeId:toNode,
+      portId: "port1"
+    }
+  }
+}
+
 
 const createMenuNode = (chart: IChart, nodeName: any, index: number) => {
     const menuArray = nodeInfo[nodeName].menu;
@@ -76,22 +91,25 @@ const createMenuNode = (chart: IChart, nodeName: any, index: number) => {
         const portName = "port" + (index0 + 2).toString() ;
         ports[portName] = {id:portName, type:'output'};
         if (menuItem.next){
-          let linkName = 'link_' + Math.floor(Math.random()*100000000);
           const fromNode = nodeName;
           const toNode = menuItem.next;
-          console.log ('creating link in menu')
-          console.log (linkName)
-          chart.links[linkName] = {
-            id:linkName,
-            from:{
-              nodeId:fromNode,
-              portId: portName
-            },
-            to:{
-              nodeId:toNode,
-              portId: "port1"
-            }
-          }
+          createLink(fromNode, toNode, portName, chart);
+          // let linkName = 'link_' + Math.floor(Math.random()*100000000);
+          // const fromNode = nodeName;
+          // const toNode = menuItem.next;
+          // console.log ('creating link in menu')
+          // console.log (linkName)
+          // chart.links[linkName] = {
+          //   id:linkName,
+          //   from:{
+          //     nodeId:fromNode,
+          //     portId: portName
+          //   },
+          //   to:{
+          //     nodeId:toNode,
+          //     portId: "port1"
+          //   }
+          // }
 
         }
 
