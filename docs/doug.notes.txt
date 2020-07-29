@@ -1,6 +1,8 @@
-read in a script the correct way 
-connect all the next
-cross reference for the dialog/calculate/menu
+read in a script the correct way DONE
+connect all the next DONE
+cross reference for the dialog/ DONE
+create menu node
+creaet switch node
 save off read in script
 allow edits of node info 
 

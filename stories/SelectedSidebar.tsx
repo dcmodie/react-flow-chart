@@ -32,21 +32,10 @@ const Button = styled.div`
   }
 `
 
-const createChart = (nodeInfo: any)=>{
-  const retVal: IChart = {    
-    offset: {
-        x: 0,
-        y: 0,
-      },
-    scale: 1,
-    nodes:{},
-    links:{},
-    selected: {},
-    hovered: {}
-  }
 
-  Object.keys(nodeInfo).map ( (node: any, index)=>{
-    retVal.nodes[node] = {
+const createClipNode = (chart: IChart, node: any, index: number) => {
+    chart.nodes[node] = 
+    {
       id:node,
       type:'input-output',
       readonly:false,
@@ -68,7 +57,7 @@ const createChart = (nodeInfo: any)=>{
       const toNode = nodeInfo[node].next;
       console.log ('creating link')
       console.log (linkName)
-      retVal.links[linkName] = {
+      chart.links[linkName] = {
         id:linkName,
         from:{
           nodeId:fromNode,
@@ -80,10 +69,38 @@ const createChart = (nodeInfo: any)=>{
         }
       }
 
-      console.log('link')
-      console.log(retVal.links)
+  //    console.log('link')
+  //    console.log(retVal.links)
 
     }
+
+
+
+
+}
+
+const createChart = (nodeInfo: any)=>{
+  const retVal: IChart = {    
+    offset: {
+        x: 0,
+        y: 0,
+      },
+    scale: 1,
+    nodes:{},
+    links:{},
+    selected: {},
+    hovered: {}
+  }
+
+  Object.keys(nodeInfo).map ( (node: any, index)=>{
+
+    if (node.hasOwnProperty("menu")){
+      // need to create menu node
+    }
+    else {
+      createClipNode(retVal, node, index)
+    }
+
   } )
 
 /*
