@@ -12,7 +12,13 @@ export interface INodeInnerDefaultProps {
 const Outer = styled.div`
   padding: 40px 30px;
 `
-
+/*
+const clipData = {
+	ci_whatisit_preexisting_11:{
+      dialog:"You have a pre existing"
+  }
+}
+*/
 
 export const NodeInnerDefault = ({ node,className }: INodeInnerDefaultProps) => {
   return (

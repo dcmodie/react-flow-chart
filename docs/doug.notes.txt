@@ -1,3 +1,12 @@
+read in a script the correct way 
+connect all the next
+cross reference for the dialog/calculate/menu
+save off read in script
+allow edits of node info 
+
+
+
+
 		"switch": {
 			"data": "isPrimaryIncome",
 			"cases": {

@@ -69,7 +69,30 @@ export const Temp = (props: TempProps) => {
   )
 }
 
+/*
 
-//        console.log('chart.links[item]')
-//        console.log(chart.links[item])
-
+      id: 'ci_whatisit_preexisting_11',
+      type: 'output-only',
+      readonly:true,
+      position: {
+        x: 300,
+        y: 100,
+      },
+      ports: {
+        port1: {
+          id: 'port1',
+          type: 'output',
+          properties: {
+            value: 'yes',
+          },
+        },
+        port2: {
+          id: 'port2',
+          type: 'output',
+          properties: {
+            value: 'no',
+          },
+        },
+      },
+    },
+*/
