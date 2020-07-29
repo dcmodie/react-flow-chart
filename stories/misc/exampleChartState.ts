@@ -18,18 +18,9 @@ export const nodeInfo_old = {
   }
 }
 
-export const nodeInfo_temp = {
-    "ci_whatisit_CI_def_10": {
-        "clip": "ci_whatisit_ci_def",
-        "playbarPercentage": 0.27272727272727276,
-        "next": "ci_whatisit_preexisting_11"
-
-    },
-    "ci_whatisit_preexisting_11": {
-        "clip": "ci_whatisit_preexisting",
-        "playbarPercentage": 0.29545454545454547,
-        "next": "ci_whatisit_specifieddisease_12"
-    }
+export const dialogReference = {
+  LABEL_CI_what_is_it:'dialog for LABEL_CI_what_is_it',
+  ci_whatisit_CI_def_10:'dialog for ci_whatisit_CI_def_10'
 }
 
 export const nodeInfo = {
