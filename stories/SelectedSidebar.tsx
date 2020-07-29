@@ -6,8 +6,6 @@ import { FlowChart, ScriptDisplay } from '../src'
 import * as actions from '../src/container/actions'
 import { Content, Page, Sidebar } from './components'
 import {  nodeInfo } from './misc/exampleChartState'
-//import {  chartSimple } from './misc/exampleChartState'
-//import { chartSimple, nodeInfo } from './misc/exampleChartState'
 import { IChart } from '../src'
 
 const Message = styled.div`
@@ -31,12 +29,10 @@ const Button = styled.div`
     background: #5682d2;
   }
 `
-
-
-const createClipNode = (chart: IChart, node: any, index: number) => {
-    chart.nodes[node] = 
+const createClipNode = (chart: IChart, nodeName: any, index: number) => {
+    chart.nodes[nodeName] = 
     {
-      id:node,
+      id:nodeName,
       type:'input-output',
       readonly:false,
       position:{x:300, y:130 * index},
@@ -51,10 +47,10 @@ const createClipNode = (chart: IChart, node: any, index: number) => {
           }
       },
     }
-    if (nodeInfo[node].next){
+    if (nodeInfo[nodeName].next){
       let linkName = 'link_' + Math.floor(Math.random()*100000000);
-      const fromNode = node;
-      const toNode = nodeInfo[node].next;
+      const fromNode = nodeName;
+      const toNode = nodeInfo[nodeName].next;
       console.log ('creating link')
       console.log (linkName)
       chart.links[linkName] = {
@@ -73,11 +69,65 @@ const createClipNode = (chart: IChart, node: any, index: number) => {
   //    console.log(retVal.links)
 
     }
-
-
-
-
 }
+
+
+const createMenuNode = (chart: IChart, nodeName: any, index: number) => {
+
+    //const menuArray = nodeInfo
+
+
+
+
+    chart.nodes[nodeName] = 
+    {
+      id:nodeName,
+      type:'input-output',
+      readonly:false,
+      position:{x:300, y:130 * index},
+      ports:{ 
+        porta: {
+            id: 'porta',
+            type: 'input',
+          },
+        portb: {
+            id: 'portb',
+            type: 'output',
+          },
+          portc: {
+            id: 'portc',
+            type: 'output',
+          }
+      },
+    }
+    /*
+    if (nodeInfo[nodeName].next){
+      let linkName = 'link_' + Math.floor(Math.random()*100000000);
+      const fromNode = nodeName;
+      const toNode = nodeInfo[nodeName].next;
+      console.log ('creating link')
+      console.log (linkName)
+      chart.links[linkName] = {
+        id:linkName,
+        from:{
+          nodeId:fromNode,
+          portId: "port2"
+        },
+        to:{
+          nodeId:toNode,
+          portId: "port1"
+        }
+      }
+
+  //    console.log('link')
+  //    console.log(retVal.links)
+
+    }
+    */
+}
+
+
+
 
 const createChart = (nodeInfo: any)=>{
   const retVal: IChart = {    
@@ -93,9 +143,11 @@ const createChart = (nodeInfo: any)=>{
   }
 
   Object.keys(nodeInfo).map ( (node: any, index)=>{
-
-    if (node.hasOwnProperty("menu")){
+    console.log('has menu')
+    console.log(nodeInfo[node].hasOwnProperty("menu"))
+    if (nodeInfo[node].hasOwnProperty("menu")){
       // need to create menu node
+      createMenuNode(retVal, node, index);
     }
     else {
       createClipNode(retVal, node, index)
@@ -104,6 +156,34 @@ const createChart = (nodeInfo: any)=>{
   } )
 
 /*
+
+
+   "MENU_main_menu_display_1": {
+        "clip": "intro_nav_select_no_all",
+        "title": "Where would you like to go?",
+        "menu": [{
+            "label": "Introduction",
+            "next": "LABEL_CI_intro"
+        }, {
+            "label": "Learn about it.",
+            "next": "LABEL_CI_what_is_it"
+        }, {
+            "label": "Why enroll?",
+            "next": "LABEL_CI_why_need"
+        }, {
+            "label": "Review plan details.",
+            "next": "LABEL_CI_full_chart"
+        }, {
+            "label": "Help me decide.",
+            "next": "LABEL_CI_calculator"
+        }],
+        "playbarPercentage": 0.022727272727272728,
+        "next": "LABEL_CI_intro"
+    }
+
+
+
+
     link1: {
       id: 'link1',
       from: {

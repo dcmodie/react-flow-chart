@@ -79,6 +79,29 @@ export const nodeInfo = {
         "subtitle": "Learn how critical illness insurance works.",
         "playbarPercentage": 0.4318181818181817,
         "next": "Critical_Illness_Insurance__What_Is_Covered__18"
+    },
+
+    "MENU_main_menu_display_1": {
+        "clip": "intro_nav_select_no_all",
+        "title": "Where would you like to go?",
+        "menu": [{
+            "label": "Introduction",
+            "next": "LABEL_CI_intro"
+        }, {
+            "label": "Learn about it.",
+            "next": "LABEL_CI_what_is_it"
+        }, {
+            "label": "Why enroll?",
+            "next": "LABEL_CI_why_need"
+        }, {
+            "label": "Review plan details.",
+            "next": "LABEL_CI_full_chart"
+        }, {
+            "label": "Help me decide.",
+            "next": "LABEL_CI_calculator"
+        }],
+        "playbarPercentage": 0.022727272727272728,
+        "next": "LABEL_CI_intro"
     }
   }
 /*
@@ -587,47 +610,26 @@ export const chartSimple: IChart = {
  
 
     "MENU_main_menu_display_1": {
-
         "clip": "intro_nav_select_no_all",
-
         "title": "Where would you like to go?",
-
         "menu": [{
-
             "label": "Introduction",
-
             "next": "LABEL_CI_intro"
-
         }, {
-
             "label": "Learn about it.",
-
             "next": "LABEL_CI_what_is_it"
-
         }, {
-
             "label": "Why enroll?",
-
             "next": "LABEL_CI_why_need"
-
         }, {
-
             "label": "Review plan details.",
-
             "next": "LABEL_CI_full_chart"
-
         }, {
-
             "label": "Help me decide.",
-
             "next": "LABEL_CI_calculator"
-
         }],
-
         "playbarPercentage": 0.022727272727272728,
-
         "next": "LABEL_CI_intro"
-
     },
 
  
