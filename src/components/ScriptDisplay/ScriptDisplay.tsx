@@ -17,7 +17,7 @@ export const ScriptDisplay = (props: ScriptDisplayProps) => {
       const originNode = chart.links[key].from.nodeId;
       const originPort = chart.links[key].from.portId;
       const destNode = chart.links[key].to.nodeId;
-      if (originNode && destNode){
+      if (originNode && destNode  &&  (nodeInfo[originNode] && nodeInfo[destNode] )) {
 
         // Object.keys(nodeInfo[originNode]).map ( (key0: any) => {
         //   //if (key0 !== 'dialog'){
@@ -34,6 +34,11 @@ export const ScriptDisplay = (props: ScriptDisplayProps) => {
         if (!scriptObject[destNode]){
           scriptObject[destNode] = nodeInfo[destNode];
         }
+        // console.log('new nodes')
+        // console.log(scriptObject[originNode])
+        // console.log(scriptObject[destNode])
+        scriptObject[originNode].next = undefined;
+        scriptObject[destNode].next = undefined;
 
         // if menu node, set the 'next' of the correct menu button 
         // need to handle conditionals here as well
