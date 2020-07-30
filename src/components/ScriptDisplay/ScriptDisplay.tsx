@@ -29,20 +29,12 @@ export const ScriptDisplay = (props: ScriptDisplayProps) => {
           }
         }) 
 
-        console.log('updating script in script display')
-        console.log(originNode)
-        console.log(scriptObject)
-        console.log(scriptObject[originNode])
-        console.log(scriptObject[originNode][0])
-        // if menu node, set the next of the correct menu button 
+        // if menu node, set the 'next' of the correct menu button 
         // need to handle conditionals here as well
         if (scriptObject[originNode].hasOwnProperty("menu")){
-          //node ports type
-          //get array of output ports
-          const arrayOutPorts = Object.keys(chart.nodes[originNode].ports).filter( (port)=> { return (chart.nodes[originNode].ports[port].type === 'output')} )
-          console.log('arrayOutPorts')
-          console.log(arrayOutPorts)
-          //get port
+          const arrayOutPorts = Object.keys(chart.nodes[originNode].ports).filter( (port)=> { 
+            return (chart.nodes[originNode].ports[port].type === 'output')
+          })
           //find index of output port on node
           const index = arrayOutPorts.indexOf(originPort);
           scriptObject[originNode].menu[index].next = destNode;
@@ -50,7 +42,6 @@ export const ScriptDisplay = (props: ScriptDisplayProps) => {
         else {
           scriptObject[originNode].next = destNode;
         }
-        
       }
     } )
     return (<div ><pre>{JSON.stringify(scriptObject, null, 2) }</pre></div>)
@@ -58,24 +49,8 @@ export const ScriptDisplay = (props: ScriptDisplayProps) => {
 
   return (
     <div  style={{overflowY:'scroll'}}>
-{
-      /*
-      <div>links:
-        {Object.keys(chart.links).map ( (item)=>{
-          return (
-            <div>
-              <div>Link:</div>
-              <div>from:{chart.links[item].from.nodeId}</div>
-              <div>to:{chart.links[item].to.nodeId}</div>
-            </div>
-          )
-
-        } )}
-      </div>
-      */
-}
-      <div >
-        {createScript()}
+      <div>
+        { createScript() }
       </div>
     </div>
   )
