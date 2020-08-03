@@ -1,8 +1,12 @@
 read in a script the correct way DONE
 connect all the next DONE
 cross reference for the dialog/ DONE
-create menu node
+create menu node DONE
 creaet switch node
+create calculate
+create progress title
+create footnote
+create form
 save off read in script
 allow edits of node info 
 
